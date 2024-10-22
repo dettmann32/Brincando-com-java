@@ -2,8 +2,10 @@ package com.apitestes.testes.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.apitestes.testes.modules.products.productIcmsDTO;
 import com.apitestes.testes.modules.products.productsIcms;
 
 @RestController
@@ -14,10 +16,11 @@ String getRout(){
     return "hello World";
 }
 
-@GetMapping("/icms")
-void icmsProduct(){
+@PostMapping("/icms")
+void icmsProduct(@RequestBody productIcmsDTO produtoApi){
     
-    productsIcms produto = new productsIcms("maca",123,(float) 1.99,17, (float)58.82);
+    productsIcms produto = new productsIcms(produtoApi.nome(),produtoApi.SKU(),produtoApi.price(),produtoApi.aliq(),produtoApi.reducao());
+    System.out.println(produtoApi.toString());
     System.out.println(produto.getSKU());
     System.out.println(produto.getPrice());
     System.out.println(produto.getValueICMS());

@@ -16,7 +16,7 @@ public class productsIcms extends products {
 
     public productsIcms(String nome, Integer SKU, float price, float aliq,float reducao){
         super(nome,SKU,price);
-
+        System.out.println("reducao aplicada");
         float baseDeCalc = price * (1 - (reducao / 100));
 
 
