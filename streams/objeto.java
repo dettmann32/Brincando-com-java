@@ -1,9 +1,9 @@
 public class objeto {
     
     private String title;
-    private long price;
+    private float price;
 
-    objeto(String title, long d){
+    objeto(String title, float d){
         this.title = title;
         this.price = d;
     }
@@ -12,7 +12,7 @@ public class objeto {
         return this.title;
     }
 
-    public long getPrice(){
+    public float getPrice(){
         return this.price;
     }
 

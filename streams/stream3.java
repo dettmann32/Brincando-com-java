@@ -33,6 +33,6 @@ public class stream3 {
     public static void comStream(List<List<objeto>> lista){
         lista.stream().flatMap(ln -> ln.stream())
         .filter(ls -> ls.getPrice() < 10)
-        .forEach(System.out::println);
+        .forEach(x -> System.out.println(x.getTitle()));
     }
 }
