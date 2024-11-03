@@ -12,6 +12,7 @@ public class listObjAnimals {
     private void showListAnimlasNew(List<? extends animals> lista){ // ira mostrar animais novos
 
         lista.stream()
+        .sorted(Comparator.comparing(animals::getIdade))
         .filter(animal -> animal.getIdade() <= 4)
         .map(ls -> ls.getName())
         .collect(Collectors.toList()).forEach(System.out::println);
